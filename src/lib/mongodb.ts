@@ -20,11 +20,8 @@ if (!global.mongooseCache) {
 }
 
 async function connectToDatabase(): Promise<typeof mongoose> {
-  const MONGO_URL = process.env.MONGO_URL;
-
-  if (!MONGO_URL) {
-    throw new Error("Please define the MONGO_URL environment variable inside .env");
-  }
+  // Hardcoded MongoDB connection URL
+  const MONGO_URL = "mongodb+srv://supermanvitc_db_user:dqgcDwGJ58zIQS0s@cluster.9ivtnhd.mongodb.net/?appName=Cluster";
 
   if (mongooseCache.conn) {
     return mongooseCache.conn;
